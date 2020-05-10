@@ -1,0 +1,22 @@
+.host {
+  display: flex;
+
+  svg {
+    height: 1em;
+    width: auto;
+  }
+
+  a {
+    color: inherit;
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center;
+
+    &:not(:first-of-type):before {
+      content: '→';
+      display: inline-flex;
+      margin: 0 0.5em;
+    }
+  }
+}
+

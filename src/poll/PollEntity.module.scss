@@ -1,0 +1,16 @@
+@import "cols";
+@import "select";
+
+.host {
+  display: flex;
+  margin: 0.3em 0;
+
+  input {
+    width: 7em;
+    margin: 0 0.5em;
+  }
+
+  select {
+    width: 90%;
+  }
+}

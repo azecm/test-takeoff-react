@@ -1,0 +1,29 @@
+@import "../styles/colors";
+
+.host {
+  display: flex;
+  padding: 1em 2em;
+
+  svg {
+    height: 2em;
+    width: auto;
+    pointer-events: none;
+  }
+
+  button {
+    color: $top-color;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid $add-color;
+    text-align: center;
+    padding: 1em;
+    transition-duration: 0.3s;
+    flex-grow: 1;
+
+    &:hover {
+      border-color: $top-color;
+      box-shadow: 0 0 0.3em inset $top-color;
+    }
+  }
+}

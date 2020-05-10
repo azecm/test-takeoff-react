@@ -1,0 +1,49 @@
+@import "../styles/colors";
+
+.host {
+  display: block;
+  position: relative;
+
+  header {
+    padding: 1em 2em;
+    font-weight: bold;
+    color: silver;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 2em;
+    background-color: #f4f7f9;
+
+    button {
+      border-radius: 0.3em;
+      padding: 0.5em 1.5em;
+      border: 0 none;
+      cursor: pointer;
+      transition-duration: 0.3s;
+
+      &:focus {
+        outline: 0 none;
+      }
+
+      &.test {
+        color: $top-color;
+        background-color: white;
+
+        &:hover {
+          box-shadow: 0 0 0.3em inset $top-color;
+        }
+      }
+
+      &.next {
+        color: white;
+        background-color: $top-color;
+
+        &:hover {
+          box-shadow: 0 0 0.3em inset white;
+        }
+      }
+    }
+  }
+}

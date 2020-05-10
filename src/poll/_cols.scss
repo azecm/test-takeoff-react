@@ -1,0 +1,39 @@
+@import "common";
+
+.col1 {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.col2 {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+$i1: 0;
+@each $background, $title, $operator in $colors {
+  $i1: $i1 + 1;
+  .pollItem.type-#{$i1} {
+    background-color: $background;
+
+    .title {
+      color: $title;
+    }
+
+    .operator {
+      background-color: $operator;
+    }
+  }
+  .operator-#{$i1} {
+    background-color: $operator;
+  }
+}
+
+.operator {
+  border-radius: 0.2em;
+  padding: 0.5em 1em;
+  font-size: 0.8rem;
+  margin-right: 1em;
+}

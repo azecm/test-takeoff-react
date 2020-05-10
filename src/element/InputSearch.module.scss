@@ -1,0 +1,36 @@
+@import "../styles/colors";
+
+.host {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 400px;
+
+  svg {
+    pointer-events: none;
+    width: 1em;
+    height: auto;
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    position: absolute;
+    right: 0.3em;
+    top: 50%;
+    transform: translateY(-40%);
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    color: silver;
+    transition-duration: 0.3s;
+
+    &:hover {
+      color: $top-color;
+    }
+  }
+}

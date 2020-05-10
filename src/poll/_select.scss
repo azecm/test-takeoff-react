@@ -1,0 +1,14 @@
+select {
+  padding: 0.5em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  border: 1px solid silver;
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &.width100 {
+    width: 100%;
+  }
+}
