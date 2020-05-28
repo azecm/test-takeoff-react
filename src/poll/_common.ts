@@ -21,7 +21,7 @@ export const pollTypeName = ['', 'Возраст респондента', 'Ти�
 
 export interface DataPollItemEntity {
     ind: number;
-    elements: (HTMLInputElement|HTMLSelectElement)[];
+    elements: (HTMLInputElement | HTMLSelectElement)[];
 }
 
 export interface DataPollItem {
@@ -29,6 +29,7 @@ export interface DataPollItem {
     type: EType
     entityList: DataPollItemEntity[]
 }
+
 /*
 export class DataPollItemEntity {
     static index = 0;

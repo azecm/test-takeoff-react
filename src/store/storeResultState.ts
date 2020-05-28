@@ -5,11 +5,11 @@ const CHANGE_STATE = 'CHANGE_STATE';
 
 type TWinState = ResultInterface | null;
 
-export interface WindowStateAction extends Action<typeof CHANGE_STATE>{
+export interface WindowStateAction extends Action<typeof CHANGE_STATE> {
     payload: TWinState
 }
 
-export function openWindowAction(data:ResultInterface): WindowStateAction {
+export function openWindowAction(data: ResultInterface): WindowStateAction {
     return {
         type: CHANGE_STATE,
         payload: data

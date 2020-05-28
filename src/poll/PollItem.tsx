@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import style from './PollItem.module.scss';
 import {EType, pollTitles, pollTypeName} from "./_common";
 import ActionButton from "../element/ActionButton";
@@ -19,26 +19,26 @@ interface Props {
 }
 
 function PollItem(prop: Props) {
+    const store = useStore() as AppStore;
 
-    const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const onChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
         const type = parseInt(e.target.value, 10);
         store.dispatch(updatePollItemTypeAction(prop.ind, type));
         store.dispatch(dropPollEntityAction(prop.ind));
         if (type) {
             store.dispatch(addPollEntityAction(prop.ind));
         }
-    };
-    const onAddEntity = () => {
+    }, [store, prop]);
+
+    const onAddEntity = useCallback(() => {
         if (prop.type) {
             store.dispatch(addPollEntityAction(prop.ind));
         }
-    };
+    }, [store, prop]);
 
-    const store = useStore() as AppStore;
-
-    const onRemoveCondition = () => {
+    const onRemoveCondition = useCallback(() => {
         store.dispatch(removePollItemAction(prop.ind));
-    };
+    }, [store, prop]);
 
     const buttonText = pollTitles[prop.type].toLowerCase();
 

@@ -10,8 +10,8 @@ interface Props {
 
 function PollEntity(prop: Props) {
     prop.data.elements = [];
-    const getRef = (el:HTMLInputElement|HTMLSelectElement|null)=>{
-        if(el){
+    const getRef = (el: HTMLInputElement | HTMLSelectElement | null) => {
+        if (el) {
             prop.data.elements.push(el);
         }
     };

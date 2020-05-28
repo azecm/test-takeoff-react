@@ -11,7 +11,7 @@ function PollItems(prop: {} & PollItemsStore) {
                       type={item.type}
                       ind={item.ind}
                       key={item.ind}/>)}
-                      </>
+        </>
     );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import style from './AddCondition.module.scss';
 import {useStore} from "react-redux";
 import {AppStore} from "../store";
@@ -9,9 +9,10 @@ function AddCondition() {
 
     const store = useStore() as AppStore;
 
-    const onClick = () => {
+    const onClick = useCallback(() => {
         store.dispatch(addPollItemAction());
-    };
+    }, [store]);
+
     return (
         <div className={style.host}>
             <button onClick={onClick}>

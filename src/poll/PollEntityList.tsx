@@ -10,10 +10,10 @@ interface Props {
     ind: number
 }
 
-function PollEntityList(prop: Props & DataPollItem & {dispatch: Dispatch}) {
+function PollEntityList(prop: Props & DataPollItem & { dispatch: Dispatch }) {
     return (
         <>
-            {prop.entityList.map((entity, i)=>
+            {prop.entityList.map((entity, i) =>
                 <PollEntity
                     index={i + 1}
                     type={prop.type}

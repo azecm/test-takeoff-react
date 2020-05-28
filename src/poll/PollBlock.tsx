@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import style from './PollBlock.module.scss';
 import ResultBlock from "./ResultBlock";
 import {DataPollItem, pollTypeName, ResItem, ResultInterface, TRow} from "./_common";
@@ -7,7 +7,6 @@ import PollItems from "./PollItems";
 import {useStore} from "react-redux";
 import {AppStore} from "../store";
 import {openWindowAction} from "../store/storeResultState";
-
 
 
 function getResult(items: DataPollItem[]) {
@@ -43,9 +42,10 @@ function getResult(items: DataPollItem[]) {
 function PollBlock() {
     const store = useStore() as AppStore;
 
-    const resView = () => {
+
+    const resView = useCallback(() => {
         store.dispatch(openWindowAction(getResult(store.getState().pollItems.data)));
-    };
+    }, [store]);
 
     return (
         <div className={style.host}>
